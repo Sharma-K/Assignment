@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(1163)https://mail-attachment.googleusercontent.com/attachment/u/0/?ui=2&ik=1a2727583d&attid=0.1&permmsgid=msg-f:1752297138157920717&th=185168f68cd621cd&view=att&disp=inline&realattid=f_lbpa4wpk0&ser=1&saddbat=ANGjdJ-QOQtNzk4rTFLNyZ3TG_x9sje-5EA88EeamsPWkgTogrJGCk0B16KAa0T9eopgDhl-FZ_bKN9OqpVS495ZP535K6UB8hxcOu1xB6ZLUtLUoGWnMwWEiJtJxwF8blxkC-pu_ynKGtTQXngJIMBxdmmTTHwKOATaebcQMhzDQj1FZffbYNwdXwFxhxeJW_SVIlf81-331u_SgckTUDzkS_RNK2-WrB_9L_d1_UXTpyb4d6rgVo5_GxTjT3ud9jgUO39MwCYGcNLIqqpLiuat02MoKXl0xc3wxq2vXmLeRpfAqgLyqB6MQEX1-KQlTzYNzcbOM_aMpAVoshsp0qp2ovD25fN0y7U61hQhm6VcgB6Cb-OBJ36aBxYerTOk9I0uWOKl0ykV0AKmkobZ45XL2hiItvWPrOf3Lvv7NUm9b8c8ZTAZF0LkrXT9YbewJX3T0Ayd1QMPwMJ_7DSbl6G9tznQ9yDQbHiuWyey_yoO1SlLSahRDVFCps7QrnfGVOyepa1ntqpc7HR0fXa9p6y29q5UhE0OGJGXEx8qWLIhSAncY4NvwlpkQ5KVShanVPtIfCTR9LbqEP-g6221PcSdEqIiSFuoPCaAd5kyG75HGHXw6OUGoTwiO9iBYnQoc486k1A8NYb-Xbk2KocWsoqCaagaPh9c2iWyvIAMF5ZGB10AJb-xwVY7HVhvC7N41uz-A-LhwKNsRlqrYUm4dZnQgGoRT42GPyD648NAgNO-GPBHUEI0_xvM5EmJVaMrMeHHxR9Y514tGJUAhg4Zx4z1hUBo-0lAS_a3iKTHvKe8Zsy6ASPOmLF96tKWgCFHJRZpM7ftSm6Q0eLyWSfvzd4RgnITV4hoTNBFhU8vDqxUY8TGTn-IVjiBa4uugJ_BykHGTO65ynbR8j1-kaKdfaJMWUaqwDstrbLzDdshYRXXH6glNvTYRgAV_4jqn_M -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style></style></head><body><u></u>
+
+
+    
+    
+    
+    
+
+
+<div>
+    <h1 class="m_tc">REST AND SPREAD OPERATOR</h1>
+    <p id="m_startarray" class="m_tc"> Array Element  : </p>
+
+   
+    <div class="m_addinput m_tc">
+        <h2>Add Last and Add Begining</h2>
+        <input type="number" id="m_addNewInput">
+        <input type="button" class="m_addlast" value="Add Last">
+        <input type="button" class="m_addbegining" value="Add Begining">
+        <p id="task1">Output : </p>
+
+    </div>
+
+
+    <div class="m_addinput m_tc">
+        <h2>Add Element In Middle At Index Position</h2>
+        <input type="number" id="m_addinputele" placeholder="element">
+        <input type="number" id="m_addinputidx" placeholder="index">
+        <input type="button" class="m_addidx" value="Add">
+        
+        <p id="task2" >Output : </p>
+
+    </div>
+
+    
+    <div class="m_addinput m_tc">
+        <h2>Remove Element</h2>
+        <input type="number" id="m_removeinput" placeholder="element">
+        <input type="number" id="m_removeidx" placeholder="index">
+        <input type="button" class="m_remove" value="Remove">
+        <p id="task3" >Output : </p>
+
+    </div>
+
+       
+       <div class="m_addinput m_tc">
+        <h2>Replace Element</h2>
+        <input type="number" id="m_repinput" placeholder="original element">
+        <input type="number" id="m_repele" placeholder="want to replace with">
+        <input type="button" class="m_replace" value="Replace">
+        <p id="task4" >Output : </p>
+
+    </div>
+</div>
+
+<script>
+
+
+    const array = [1,2,3,4,5];
+    
+
+    const addElement = document.querySelector('#m_addNewInput');
+    const last = document.querySelector('.m_addlast');
+    const beg = document.querySelector('.m_addbegining');
+    const startarray = document.querySelector('#m_startarray');
+    const output = document.querySelector('#task1');
+    const addidx = document.querySelector('.m_addidx');
+    const remove = document.querySelector('.m_remove');
+    const replace = document.querySelector('.m_replace');
+
+    
+    startarray.innerHTML = `Array:  ${array}`;
+
+    
+
+
+
+    last.addEventListener('click', function(){
+        const addElement = document.querySelector('#m_addNewInput');
+        let value = addElement.value;
+        let newarray = [...array, value];
+
+       
+
+        output.innerHTML = `Output : ${newarray}`
+
+        
+
+    })
+
+    beg.addEventListener('click', function(){
+        const addElement = document.querySelector('#m_addNewInput');
+        let value = addElement.value;
+        let newarray = [value,...array];
+
+       
+
+        output.innerHTML = `Output : ${newarray}`
+
+        
+
+    })
+
+    addidx.addEventListener('click', function(){
+
+        const ele = document.querySelector('#m_addinputele');
+        const idx = document.querySelector('#m_addinputidx');
+
+        const newarray = [...array];
+       
+        newarray.splice(idx.value, 0, ele.value);
+        const output = document.querySelector('#task2');
+
+        output.innerHTML = `Output : ${newarray}`
+
+        
+        
+    })
+
+    remove.addEventListener('click', function(){
+
+        const ele = document.querySelector('#m_removeinput');
+        const idx = document.querySelector('#m_removeidx');
+        const newarray = [...array];
+
+        console.log(ele.value);
+
+    if(ele.value){
+
+        for(let i=0; i<newarray.length; i++ ){
+            if(newarray[i]==ele.value)
+            {
+                newarray.splice(i,1);
+            }
+        }
+
+const output = document.querySelector('#task3');
+
+output.innerHTML = `Output : ${newarray}`
+return;
+
+    }
+
+       
+       else
+       {
+        newarray.splice(idx.value, 1);
+       const output = document.querySelector('#task3');
+
+       output.innerHTML = `Output : ${newarray}`;
+       }
+
+    })
+
+
+    replace.addEventListener('click', function(){
+
+        const ele = document.querySelector('#m_repinput');
+        const rep = document.querySelector('#m_repele');
+        const newarray = [...array];
+
+        for(let i=0; i<newarray.length; i++)
+        {
+            if(newarray[i]==ele.value)
+            {
+                newarray[i]=rep.value;
+            }
+        }
+        const output = document.querySelector('#task4');
+
+       output.innerHTML = `Output : ${newarray}`
+
+    })
+    
+
+
+
+</script>
+
+</body></html>
